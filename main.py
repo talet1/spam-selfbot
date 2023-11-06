@@ -17,7 +17,7 @@ with open('settings.json') as file:
     
     channel = os.getenv('CHANNEL')
     token = os.getenv('TOKEN')
-    
+    sucvat = data["sucvat"]
     # use for local testing
     """
     channel = data["channel"]
@@ -54,7 +54,7 @@ while True:
 # the console prints out all the songs in the song list folder with id number
 print("Songs list: ")
 for i in range(len(songs.get_song_list())):
-    print(f"{i+1}. {songs.get_song_list()[i]}")
+    print(f"{i}. {songs.get_song_list()[i]}")
 print("")
 print("Choose a song to spam: ")
 
@@ -62,10 +62,10 @@ print("Choose a song to spam: ")
 while True:
     # song_index = int(input())
     song_index = int(os.getenv('SONG_INDEX'))
-    if song_index > len(songs.get_song_list()) or song_index < 1:
-        print("Invalid song number! Please choose again: ")
-    else:
+    if song_index >= 0 and song_index <= len(songs.get_song_list()):
         break
+    else:
+        print("Invalid song number! Please try again: ")
 
 ''' This is for testing
 # the console prints out all the lyrics of the chosen song
