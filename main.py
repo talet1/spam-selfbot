@@ -79,6 +79,6 @@ while True:
             else:
                 sendMessage(token, channel, i)
 
-            time.sleep(random.randint(5, 10))
+            time.sleep(random.randint(15, 30))
     except Exception as e:
         print("An error occurred!")
