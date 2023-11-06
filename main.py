@@ -58,7 +58,7 @@ print("Choose a song to spam: ")
 # check if the song number is valid else reprompting
 while True:
     # song_index = int(input())
-    song_index = os.getenv('SONG_INDEX')
+    song_index = int(os.getenv('SONG_INDEX'))
     if 1 <= song_index <= len(songs.get_song_list()):
         song_index -= 1 #adjust index to match Python 0-based indexing
         break
