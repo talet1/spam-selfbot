@@ -7,6 +7,9 @@ import pytz
 import songs
 import os
 
+from dotenv import load_dotenv
+load_dotenv()
+
 with open('settings.json') as file:
     data = json.load(file)
 
@@ -59,11 +62,10 @@ print("Choose a song to spam: ")
 while True:
     # song_index = int(input())
     song_index = int(os.getenv('SONG_INDEX'))
-    if 1 <= song_index <= len(songs.get_song_list()):
-        song_index -= 1 #adjust index to match Python 0-based indexing
-        break
+    if song_index > len(songs.get_song_list()) or song_index < 1:
+        print("Invalid song number! Please choose again: ")
     else:
-        print("Invalid song number, please choose again: ")
+        break
 
 ''' This is for testing
 # the console prints out all the lyrics of the chosen song
