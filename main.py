@@ -11,16 +11,16 @@ with open('settings.json') as file:
     data = json.load(file)
 
     # use for heroku deploy
-
+    """
     channel = os.getenv('CHANNEL')
     token = os.getenv('TOKEN')
-
-    # use for local testing
     """
+    # use for local testing
+    
     channel = data["channel"]
     token = data["token"]
     sucvat = data["sucvat"]
-    """
+    
 
 def sendTime():
     timeSend = datetime.datetime.now(tz=pytz.timezone("Asia/Bangkok"))
@@ -57,7 +57,8 @@ print("Choose a song to spam: ")
 
 # check if the song number is valid else reprompting
 while True:
-    song_index = int(input())
+    # song_index = int(input())
+    song_index = os.getenv('SONG_INDEX')
     if 1 <= song_index <= len(songs.get_song_list()):
         song_index -= 1 #adjust index to match Python 0-based indexing
         break
