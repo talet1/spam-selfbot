@@ -5,17 +5,22 @@ import time
 import datetime
 import pytz
 import songs
+import os
 
 with open('settings.json') as file:
     data = json.load(file)
 
     # use for heroku deploy
-    """channel = os.getenv('CHANNEL')
-    token = os.getenv('TOKEN')"""
 
+    channel = os.getenv('CHANNEL')
+    token = os.getenv('TOKEN')
+
+    # use for local testing
+    """
     channel = data["channel"]
     token = data["token"]
     sucvat = data["sucvat"]
+    """
 
 def sendTime():
     timeSend = datetime.datetime.now(tz=pytz.timezone("Asia/Bangkok"))
