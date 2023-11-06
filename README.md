@@ -20,6 +20,24 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Deployment
 I use [Heroku](https://www.heroku.com/) to host my bot. You can use whatever you want.
+If you want to use Heroku, you can follow [this guide]() to get started.
+
+### Heroku
+1. Create a new app.
+2. Go to the `Deploy` tab.
+3. Connect your GitHub account.
+4. Search for the forked repository.
+5. Click `Deploy Branch` to deploy the 'heroku' branch.
+6. Go to the `Resources` tab.
+7. Disable the `web` dyno and enable the `worker` dyno.
+8. Go to the `Settings` tab.
+9. Click `Reveal Config Vars`.
+10. Add a new variable with the key 'TOKEN', 'CHANNEL', and 'SONG_INDEX'.
+11. Click `Add`.
+12. Go to the `Overview` tab.
+13. Click `Configure Dynos`.
+14. Set the `worker` dyno to `ON`.
+15. Enjoy!
 
 ## Example 
 ![Example](https://i.imgur.com/5Z3Z3ZP.png)
