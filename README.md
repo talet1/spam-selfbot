@@ -20,7 +20,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Deployment
 I use [Heroku](https://www.heroku.com/) to host my bot. You can use whatever you want.
-If you want to use Heroku, you can follow [this guide]() to get started.
+If you want to use Heroku, you can follow [this guide](https://github.com/talet1/spam-selfbot/tree/main#heroku) to get started.
 
 ### Heroku
 1. Create a new app.
